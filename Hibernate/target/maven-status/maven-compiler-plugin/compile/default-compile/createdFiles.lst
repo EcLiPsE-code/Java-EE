@@ -1,0 +1,10 @@
+models\mysql\MySqlOrderDAO.class
+models\interfaces\OrderDAO.class
+models\entities\Order.class
+models\mysql\MySqlReaderDAO.class
+models\entities\Book.class
+models\entities\Reader.class
+models\interfaces\BookDAO.class
+models\interfaces\ReaderDAO.class
+models\mysql\MySqlBookDAO.class
+models\dao\DAOFactory.class

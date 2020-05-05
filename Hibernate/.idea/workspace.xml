@@ -1,74 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="963166d7-a363-4d7b-9597-0cc4c338de01" name="Default Changelist" comment="" />
+    <list default="true" id="52e6cea5-142c-4bb0-b9b2-1302cafaf034" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/entities/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TCP_IP/src/models/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hibernate_Lab1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hibernate_Lab1/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hibernate_Lab1/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hibernate_Lab1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hibernate_Lab1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hibernate_Lab1/Hibernate_Lab1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hibernate_Lab1/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hibernate_Lab1/src/main/java/models/entities/Book.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="mylibrary@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="mylibrary@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="mylibrary@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="mylibrary: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="mylibrary@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="mylibrary: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="book: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="mylibrary@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="mylibrary: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="orders: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="mylibrary@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="mylibrary: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="reader: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-    </expand>
-    <select />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="D:\Learning\6 семестр\JEE\Java-EE\Hibernate\.idea" />
-      </set>
-    </option>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
   </component>
-  <component name="ProjectId" id="1ZsqusbF45nMlMDoxnKWCiUkFpY" />
+  <component name="ProjectId" id="1bSACOalMPkUTsY27CTEHotwNHo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -76,22 +41,31 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn install" />
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="963166d7-a363-4d7b-9597-0cc4c338de01" name="Default Changelist" comment="" />
-      <created>1585638374060</created>
+      <changelist id="52e6cea5-142c-4bb0-b9b2-1302cafaf034" name="Default Changelist" comment="" />
+      <created>1588614994345</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1585638374060</updated>
-      <workItem from="1585638378045" duration="992000" />
+      <updated>1588614994345</updated>
+      <workItem from="1588615331759" duration="9000" />
+      <workItem from="1588624178869" duration="5155000" />
+      <workItem from="1588658000896" duration="56000" />
+      <workItem from="1588661199399" duration="5840000" />
     </task>
     <servers />
   </component>
@@ -99,17 +73,49 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585638964844">
+    <state x="275" y="25" key="#Auto_Import" timestamp="1588628816758">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1585638964844" />
-    <state x="463" y="121" key="FileChooserDialogImpl" timestamp="1585639266302">
+    <state x="275" y="25" key="#Auto_Import/0.0.1366.728@0.0.1366.728" timestamp="1588628816758" />
+    <state x="275" y="25" key="#Inspections" timestamp="1588678596806">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="121" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585639266302" />
-    <state x="65" y="71" key="new project wizard" timestamp="1585639385518">
+    <state x="275" y="25" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1588678596806" />
+    <state x="456" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1588629380299">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="65" y="71" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1585639385518" />
+    <state x="456" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1588629380299" />
+    <state x="463" y="122" key="FileChooserDialogImpl" timestamp="1588678015717">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1588678015717" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1588685857997">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588685857997" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1588685857996">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588685857996" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1588685857996">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588685857996" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1588685857997">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588685857997" />
+    <state x="186" y="9" key="SettingsEditor" timestamp="1588678213844">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="186" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1588678213844" />
+    <state x="390" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1588658016219">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="390" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588658016219" />
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1588678782528">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1588678782528" />
   </component>
 </project>

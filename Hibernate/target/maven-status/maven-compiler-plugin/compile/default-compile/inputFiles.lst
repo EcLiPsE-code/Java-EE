@@ -1,0 +1,10 @@
+F:\Learning\6 семестр\JEE\Java-EE\Hibernate\src\main\java\models\mysql\MySqlBookDAO.java
+F:\Learning\6 семестр\JEE\Java-EE\Hibernate\src\main\java\models\interfaces\BookDAO.java
+F:\Learning\6 семестр\JEE\Java-EE\Hibernate\src\main\java\models\mysql\MySqlOrderDAO.java
+F:\Learning\6 семестр\JEE\Java-EE\Hibernate\src\main\java\models\mysql\MySqlReaderDAO.java
+F:\Learning\6 семестр\JEE\Java-EE\Hibernate\src\main\java\models\interfaces\OrderDAO.java
+F:\Learning\6 семестр\JEE\Java-EE\Hibernate\src\main\java\models\entities\Book.java
+F:\Learning\6 семестр\JEE\Java-EE\Hibernate\src\main\java\models\entities\Order.java
+F:\Learning\6 семестр\JEE\Java-EE\Hibernate\src\main\java\models\dao\DAOFactory.java
+F:\Learning\6 семестр\JEE\Java-EE\Hibernate\src\main\java\models\entities\Reader.java
+F:\Learning\6 семестр\JEE\Java-EE\Hibernate\src\main\java\models\interfaces\ReaderDAO.java
