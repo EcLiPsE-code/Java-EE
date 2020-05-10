@@ -2,11 +2,12 @@ package models.interfaces;
 
 import models.entities.Reader;
 
-import java.util.Iterator;
+import java.util.List;
 
 public interface ReaderDAO {
-    boolean add(Reader reader);
-    boolean remove(Reader reader);
-    boolean update(Reader reader);
-    Iterator<Object> getAllReaders();
+    void add(Reader reader);
+    void delete(Reader reader);
+    void update(Reader reader);
+    List<Reader> getReaders();
+    Reader getReader(Reader reader);
 }

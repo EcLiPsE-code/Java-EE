@@ -4,11 +4,11 @@ import models.entities.Book;
 import models.entities.Order;
 import models.entities.Reader;
 
-import java.util.Iterator;
+import java.util.List;
 
 public interface OrderDAO {
-    boolean createOrder(Order order);
-    boolean removeOrder(Book book, Reader reader);
-    Iterator<Object> getOrdersCurrentReader(Reader reader);
-    Iterator<Object> getAllOrders();
+    void add(Order order);
+    void delete(Order order);
+    List<Order> getorders();
+    List<Order> getOrdersByReader(Reader reader);
 }

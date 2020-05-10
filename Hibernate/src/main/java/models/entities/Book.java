@@ -2,6 +2,7 @@ package models.entities;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table(name="books")
 public class Book {
@@ -16,6 +17,10 @@ public class Book {
     private int countPages;
     @Column(name = "countCopies")
     private int countCopies;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="orderId")
+    private Order order;
 
     public Book(){}
     public Book(String name, String author, int countPages, int countCopies){
@@ -52,12 +57,16 @@ public class Book {
             throw new IllegalArgumentException("Uncorrect count copies book");
         }
     }
+    public void setOrder(Order order){
+        this.order = order;
+    }
 
     public int getId(){return this.id;}
     public int getCountCopies(){return this.countCopies;}
     public int getCountPages(){return this.countPages;}
     public String getName(){return this.name;}
     public String getAuthor(){return this.author;}
+    public Order getOrder(){return this.order;}
 
     @Override
     public boolean equals(Object o) {

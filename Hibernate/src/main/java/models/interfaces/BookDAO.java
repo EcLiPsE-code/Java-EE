@@ -2,11 +2,12 @@ package models.interfaces;
 
 import models.entities.Book;
 
-import java.util.Iterator;
+import java.util.List;
 
 public interface BookDAO {
-    boolean add(Book book);
-    boolean remove(Book book);
-    boolean update(Book book);
-    Iterator<Object> getAllBooks();
+    void add(Book book);
+    void delete(Book book);
+    void update(Book book);
+    List<Book> getBooks();
+    Book getBookByNameAndAuthor(String name, String author);
 }
