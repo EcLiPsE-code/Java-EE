@@ -13,7 +13,14 @@ public class DialogWithUser {
         System.out.println("| 7) КНИГИ                      |");
         System.out.println("| 8) Выход                      |");
         System.out.println("---------------------------------");
-        System.out.print("Выберите пункт меню -> ");
+        System.out.print("Выберите пункт меню ->");
+    }
+
+    public static void menuCreateNewReader(){
+        System.out.println("-----------------Вы действительно хотите сделать заказ?----------------");
+        System.out.println("| 1)       Да, хочу              | 2)         Нет, не хочу            |");
+        System.out.println("-----------------------------------------------------------------------");
+        System.out.println("Выберите вариант ответа -> ");
     }
 
     public static void menuBook(){

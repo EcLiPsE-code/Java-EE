@@ -5,7 +5,6 @@ import models.entities.Reader;
 import models.interfaces.ReaderDAO;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -21,7 +20,6 @@ public class MySqlReaderDAO implements ReaderDAO {
             session.beginTransaction();
             session.save(reader);
             session.getTransaction().commit();
-
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при вставке", JOptionPane.OK_OPTION);
         }finally {
@@ -37,6 +35,24 @@ public class MySqlReaderDAO implements ReaderDAO {
         try{
             session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
             session.beginTransaction();
+            session.delete(reader);
+            session.getTransaction().commit();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при удалении", JOptionPane.OK_OPTION);
+        }finally {
+            if (session != null && session.isOpen()){
+                session.close();
+            }
+        }
+    }
+
+    @Override
+    public void delete(int id) {
+        Session session = null;
+        try{
+            session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            Reader reader = getReaderById(id);
             session.delete(reader);
             session.getTransaction().commit();
         }catch (Exception e){
@@ -101,6 +117,25 @@ public class MySqlReaderDAO implements ReaderDAO {
             query.setParameter("age", age);
             session.getTransaction().commit();
             findReader = (Reader)query.uniqueResult();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при поиске читателя", JOptionPane.OK_OPTION);
+        }finally {
+            if (session != null && session.isOpen()){
+                session.close();
+            }
+        }
+        return findReader;
+    }
+
+    @Override
+    public Reader getReaderById(int id) {
+        Session session = null;
+        Reader findReader = null;
+        try{
+            session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            findReader = session.get(Reader.class, id);
+            session.getTransaction().commit();
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при поиске читателя", JOptionPane.OK_OPTION);
         }finally {

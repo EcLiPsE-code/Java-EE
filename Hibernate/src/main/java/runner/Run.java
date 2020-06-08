@@ -24,7 +24,7 @@ public class Run {
 
             Scanner scanner = new Scanner(System.in);
             boolean flag = true;
-            while(flag){
+            label2: while(flag){
                 DialogWithUser.menuReader();
                 String answer = scanner.nextLine();
                 switch (answer){
@@ -38,17 +38,12 @@ public class Run {
                         System.out.print("Введите возраст: ");
                         int age = Integer.parseInt(scanner.nextLine());
                         readerService.addReader(new Reader(name, surname, lastName, age));
+                        System.out.println("Читатель успешно добавлен");
                         break;
                     case "2":
-                        System.out.print("Введите фамилию: ");
-                        String surnameDelete = scanner.nextLine();
-                        System.out.print("Введите имя: ");
-                        String nameDelete = scanner.nextLine();
-                        System.out.print("Введите отчество: ");
-                        String lastNameDelete = scanner.nextLine();
-                        System.out.print("Введите возраст: ");
-                        int ageDelete = Integer.parseInt(scanner.nextLine());
-                        Reader findReader = readerService.getReader(new Reader(nameDelete, surnameDelete, lastNameDelete, ageDelete));
+                        System.out.print("Введите id читателя, которого хотите удалить: ");
+                        int idDeleteReader = Integer.parseInt(scanner.nextLine());
+                        Reader findReader = readerService.getReaderById(idDeleteReader);
                         if (findReader == null){
                             System.out.println("Такого читателя нет");
                         }else{
@@ -57,15 +52,9 @@ public class Run {
                         }
                         break;
                     case "3":
-                        System.out.print("Введите фамилию: ");
-                        String surnameEdit = scanner.nextLine();
-                        System.out.print("Введите имя: ");
-                        String nameEdit = scanner.nextLine();
-                        System.out.print("Введите отчество: ");
-                        String lastNameEdit = scanner.nextLine();
-                        System.out.print("Введите возраст: ");
-                        int ageEdit = Integer.parseInt(scanner.nextLine());
-                        Reader findReader2 = readerService.getReader(new Reader(nameEdit, surnameEdit, lastNameEdit, ageEdit));
+                        System.out.print("Введите id читателя, данные которого хотите изменить: ");
+                        int idEditReader = Integer.parseInt(scanner.nextLine());
+                        Reader findReader2 = readerService.getReaderById(idEditReader);
                         if (findReader2 == null){
                             System.out.println("Такого читателя нет");
                             break;
@@ -139,45 +128,57 @@ public class Run {
                         while(flag3){
                             DialogWithUser.menuOrder();
                             String answer3 = scanner.nextLine();
-                            switch (answer3){
+                            label: switch (answer3){
                                 case "1":
-                                    System.out.print("Введите фамилию: ");
-                                    String surname2 = scanner.nextLine();
-                                    System.out.print("Введите имя: ");
-                                    String name2 = scanner.nextLine();
-                                    System.out.print("Введите отчество: ");
-                                    String lastName2 = scanner.nextLine();
-                                    System.out.print("Введите возраст: ");
-                                    int age2 = Integer.parseInt(scanner.nextLine());
-                                    Reader findReader3 = readerService.getReader(new Reader(name2, surname2, lastName2, age2));
+                                    System.out.print("Введите id читателя, который делает заказ: ");
+                                    int idReaderCreateOrder = Integer.parseInt(scanner.nextLine());
+                                    Reader findReader3 = readerService.getReaderById(idReaderCreateOrder);
                                     if(findReader3 == null){
-                                        System.out.println("Добавляем читателя в БД...");
-                                        Reader newReader = new Reader(name2, surname2, lastName2, age2);
-                                        readerService.addReader(newReader);
-                                        System.out.println("Создаем заказ...");
-                                        System.out.print("Введите название книги: ");
-                                        String nameBook = scanner.nextLine();
-                                        System.out.print("Введите автора книги: ");
-                                        String authorBook = scanner.nextLine();
-                                        Book findBook = bookService.getBookByNameAndAuthor(nameBook, authorBook);
-                                        if (findBook == null){
-                                            System.out.println("Такой книги в библиотеке нет");
-                                        }else{
-                                            System.out.println("Введите дату выдачи: ");
-                                            String dateOfIssueStr = scanner.nextLine();
-                                            Date dateOfIssue = dataConverter.convertToDatabaseColumn(new Date(new SimpleDateFormat("yyyy-MM-dd").parse(dateOfIssueStr).getTime()).toLocalDate());
-                                            System.out.println("Введите срок выдачи: ");
-                                            int countDay = Integer.parseInt(scanner.nextLine());
-                                            System.out.println("Введите дату сдачи книги: ");
-                                            String dateOfCompletionStr = scanner.nextLine();
-                                            Date dateOfCompletion = dataConverter.convertToDatabaseColumn(new Date(new SimpleDateFormat("yyyy-MM-dd").parse(dateOfCompletionStr).getTime()).toLocalDate());
-                                            System.out.println("Введите тип выдачи книги (true - абонемент, false - читальный зал): ");
-                                            boolean typeOfIssue = Boolean.parseBoolean(scanner.nextLine());
-                                            Order order = new Order(dateOfIssue, countDay, dateOfCompletion, typeOfIssue);
-                                            order.addBook(findBook);
-                                            order.setReader(findReader3);
-                                            orderService.addOrder(order);
-                                            System.out.println("Заказ успешно завершен");
+                                        DialogWithUser.menuCreateNewReader();
+                                        String answer4 = scanner.nextLine();
+                                        switch (answer4) {
+                                            case "1":
+                                                System.out.println("Добавляем читателя в БД...");
+                                                System.out.print("Введите фамилию: ");
+                                                String surname2 = scanner.nextLine();
+                                                System.out.print("Введите имя: ");
+                                                String name2 = scanner.nextLine();
+                                                System.out.print("Введите отчество: ");
+                                                String lastName2 = scanner.nextLine();
+                                                System.out.print("Введите возраст: ");
+                                                int age2 = Integer.parseInt(scanner.nextLine());
+                                                Reader newReader = new Reader(name2, surname2, lastName2, age2);
+                                                readerService.addReader(newReader);
+                                                System.out.println("Создаем заказ...");
+                                                System.out.print("Введите название книги: ");
+                                                String nameBook = scanner.nextLine();
+                                                System.out.print("Введите автора книги: ");
+                                                String authorBook = scanner.nextLine();
+                                                Book findBook = bookService.getBookByNameAndAuthor(nameBook, authorBook);
+                                                if (findBook == null) {
+                                                    System.out.println("Такой книги в библиотеке нет");
+                                                } else {
+                                                    System.out.println("Введите дату выдачи: ");
+                                                    String dateOfIssueStr = scanner.nextLine();
+                                                    Date dateOfIssue = dataConverter.convertToDatabaseColumn(new Date(new SimpleDateFormat("yyyy-MM-dd").parse(dateOfIssueStr).getTime()).toLocalDate());
+                                                    System.out.println("Введите срок выдачи: ");
+                                                    int countDay = Integer.parseInt(scanner.nextLine());
+                                                    System.out.println("Введите дату сдачи книги: ");
+                                                    String dateOfCompletionStr = scanner.nextLine();
+                                                    Date dateOfCompletion = dataConverter.convertToDatabaseColumn(new Date(new SimpleDateFormat("yyyy-MM-dd").parse(dateOfCompletionStr).getTime()).toLocalDate());
+                                                    System.out.println("Введите тип выдачи книги (true - абонемент, false - читальный зал): ");
+                                                    boolean typeOfIssue = Boolean.parseBoolean(scanner.nextLine());
+                                                    Order order = new Order(dateOfIssue, countDay, dateOfCompletion, typeOfIssue);
+                                                    order.addBook(findBook);
+                                                    order.setReader(newReader);
+                                                    orderService.addOrder(order);
+                                                    System.out.println("Заказ успешно завершен");
+                                                }
+                                                break;
+                                            case "2":
+                                                break label;
+                                            default:
+                                                break;
                                         }
                                     }
                                     else{
@@ -214,16 +215,9 @@ public class Run {
                                     }
                                     break;
                                 case "3":
-                                    System.out.print("Введите фамилию: ");
-                                    String surname3 = scanner.nextLine();
-                                    System.out.print("Введите имя: ");
-                                    String name3 = scanner.nextLine();
-                                    System.out.print("Введите отчество: ");
-                                    String lastName3 = scanner.nextLine();
-                                    System.out.print("Введите возраст: ");
-                                    int age3 = Integer.parseInt(scanner.nextLine());
-                                    Reader reader4 = new Reader(name3, surname3, lastName3, age3);
-                                    Reader findReader4 = readerService.getReader(reader4);
+                                    System.out.print("Введите id читателя, заказы которого хотите просмотреть: ");
+                                    int idReaderPrintOrders = Integer.parseInt(scanner.nextLine());
+                                    Reader findReader4 = readerService.getReaderById(idReaderPrintOrders);
                                     if (findReader4 == null){
                                         System.out.println("Такого читателя нет");
                                     }else{
@@ -263,15 +257,14 @@ public class Run {
                                     bookService.addBook(new Book(nameBook, authorBook, countPages, countCopies));
                                     break;
                                 case "2":
-                                    System.out.print("Введите название книги: ");
-                                    String nameBookDelete = scanner.nextLine();
-                                    System.out.println("Введите автора книги: ");
-                                    String authorBookDelete = scanner.nextLine();
-                                    System.out.println("Введите количество страниц в книге: ");
-                                    int countPagesDelete = Integer.parseInt(scanner.nextLine());
-                                    System.out.println("Введите количество копий книг: ");
-                                    int countCopiesDelete = Integer.parseInt(scanner.nextLine());
-                                    bookService.deleteBook(new Book(nameBookDelete, authorBookDelete, countPagesDelete, countCopiesDelete));
+                                    System.out.print("Введите id книги, которую хотите удалить: ");
+                                    int idBookDelete = Integer.parseInt(scanner.nextLine());
+                                    Book findBook2 = bookService.getBookById(idBookDelete);
+                                    if (findBook2 == null){
+                                        System.out.println("Такой книги в библиотеке нет!");
+                                    }else{
+                                        bookService.deleteBook(findBook2);
+                                    }
                                     break;
                                 case "3":
                                     System.out.print("Введите название книги: ");
@@ -283,7 +276,7 @@ public class Run {
                                         System.out.println("Такой книги в библиотеке нет!");
                                     }
                                     else{
-                                        System.out.println(findBook);
+                                        System.out.println("Найденная книга: " + findBook);
                                     }
                                     break;
                                 case "4":
@@ -302,7 +295,7 @@ public class Run {
                         break;
                     case "8":
                         flag = false;
-                        break;
+                        break label2;
                     default:
                         System.out.println("Такого пункта меню нет!");
                 }

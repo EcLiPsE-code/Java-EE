@@ -9,6 +9,9 @@ import java.util.List;
 public interface OrderDAO {
     void add(Order order);
     void delete(Order order);
+    void delete(int id);
     List<Order> getorders();
+    Order getOrderById(int id);
     List<Order> getOrdersByReader(Reader reader);
+    List<Order> getOrdersByReaderId(int id);
 }

@@ -41,6 +41,8 @@ public class LibraryService {
         public Book getBookByNameAndAuthor(String name, String author){
             return bookDAO.getBookByNameAndAuthor(name, author);
         }
+
+        public Book getBookById(int id){return bookDAO.getBookById(id);}
     }
 
     public class ReaderService{
@@ -53,6 +55,8 @@ public class LibraryService {
             readerDAO.delete(reader);
         }
 
+        public void deleteReaderById(int id) {readerDAO.delete(id);}
+
         public void updateReader(Reader reader){
             readerDAO.update(reader);
         }
@@ -64,6 +68,8 @@ public class LibraryService {
         public Reader getReader(Reader reader){
             return readerDAO.getReader(reader);
         }
+
+        public Reader getReaderById(int id) {return  readerDAO.getReaderById(id);}
     }
 
     public class OrderService{

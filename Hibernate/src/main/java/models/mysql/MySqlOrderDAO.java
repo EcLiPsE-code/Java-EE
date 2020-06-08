@@ -51,6 +51,24 @@ public class MySqlOrderDAO implements OrderDAO {
     }
 
     @Override
+    public void delete(int id) {
+        Session session = null;
+        try{
+            session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            Order order = getOrderById(id);
+            session.delete(order);
+            session.getTransaction().commit();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при удалении заказа", JOptionPane.OK_OPTION);
+        }finally {
+            if (session != null && session.isOpen()){
+                session.close();
+            }
+        }
+    }
+
+    @Override
     public List<Order> getorders() {
         Session session = null;
         List<Order> orders = new ArrayList<Order>();
@@ -61,6 +79,11 @@ public class MySqlOrderDAO implements OrderDAO {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при выводе данных", JOptionPane.OK_OPTION);
         }
         return orders;
+    }
+
+    @Override
+    public Order getOrderById(int id) {
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Order.class, id);
     }
 
     public Order getOrder(Order order){
@@ -100,5 +123,22 @@ public class MySqlOrderDAO implements OrderDAO {
              JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при выводе данных", JOptionPane.OK_OPTION);
          }
          return findOrders;
+    }
+
+    @Override
+    public List<Order> getOrdersByReaderId(int id) {
+        Session session = null;
+        List<Order> findOrders = new ArrayList<>();
+        try{
+            session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            Query query = session.createQuery("from Order where readerId =:readerId");
+            query.setParameter("readerId", id);
+            session.getTransaction().commit();
+            findOrders = query.list();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при выводе данных", JOptionPane.OK_OPTION);
+        }
+        return findOrders;
     }
 }

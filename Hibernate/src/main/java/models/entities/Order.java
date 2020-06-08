@@ -130,7 +130,6 @@ public class Order {
                 ", dateOfCompletion=" + dateOfCompletion +
                 ", typeOfIssue=" + typeOfIssue +
                 ", books=" + books +
-                ", reader=" + reader +
                 '}';
     }
 }

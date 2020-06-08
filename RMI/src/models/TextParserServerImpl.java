@@ -1,6 +1,7 @@
 package models;
 
 import java.rmi.RemoteException;
+import java.util.regex.Pattern;
 
 public class TextParserServerImpl implements TextParserLogic {
     @Override
@@ -54,14 +55,9 @@ public class TextParserServerImpl implements TextParserLogic {
 
     private boolean checkRussianLetters(char symbol) {
         try{
-            String stringLetters = "абвгдеёжзиклмнопрстоуфхцчшщъыьэюяАБВГДЕЁЖЗИКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
-            char[] chArrayLetters = stringLetters.toCharArray();
-            for (char letter : chArrayLetters){
-                if (symbol == letter){
-                    return true;
-                }
-            }
-            return false;
+            String str = String.valueOf(symbol);
+            boolean result = str.matches("[\\u0400-\\u04FF]");
+            return result;
         }catch (Exception ex){
             return false;
         }

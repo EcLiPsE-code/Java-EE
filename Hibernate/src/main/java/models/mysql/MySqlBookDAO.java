@@ -50,6 +50,25 @@ public class MySqlBookDAO implements BookDAO {
     }
 
     @Override
+    public void delete(int id) {
+        Session session = null;
+        try{
+            session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            Book book = getBookById(id);
+            session.delete(book);
+            session.getTransaction().commit();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при удалении книги", JOptionPane.OK_OPTION);
+        }
+        finally {
+            if (session != null && session.isOpen()){
+                session.close();
+            }
+        }
+    }
+
+    @Override
     public void update(Book book) {
         Session session = null;
         try{
@@ -103,5 +122,24 @@ public class MySqlBookDAO implements BookDAO {
             }
         }
         return findBook;
+    }
+
+    @Override
+    public Book getBookById(int id) {
+       Session session = null;
+       Book findBook = null;
+       try{
+           session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+           session.beginTransaction();
+           findBook = session.get(Book.class, id);
+           session.getTransaction().commit();
+       }catch (Exception e){
+           JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка при поиске книги", JOptionPane.OK_OPTION);
+       }finally {
+           if (session != null && session.isOpen()){
+               session.close();
+           }
+       }
+       return findBook;
     }
 }

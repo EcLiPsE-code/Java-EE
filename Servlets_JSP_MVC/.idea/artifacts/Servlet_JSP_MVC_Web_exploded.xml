@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Servlet_JSP_MVC:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Servlet_JSP_MVC_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Servlet_JSP_MVC/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Servlet_JSP_MVC" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="org.apache.logging.log4j:log4j-1.2-api:2.0-rc1" />
+          <element id="library" level="project" name="mysql:mysql-connector-java:8.0.20" />
+          <element id="library" level="project" name="org.apache.taglibs:taglibs-standard-compat:1.2.5" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
